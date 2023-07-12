@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Agerbeek Loonbelasting Advies
+		</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="index is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header" class="alt">
+				<a href="index.html">
+					<img src="images/Logo.png" alt="img" width="80" height="40">
+				</a>
+				<nav id="nav">
+					<ul>
+						<li><a href="AboutMe.html">Over Mij</a></li>
+						<li><a href="Articles.html">Artikelen</a></li>
+						<li><a href="Services.html">Diensten</a></li>
+						<li><a href="Contact.html">Contact</a></li>
+					  </ul>
+				</nav>
+			</header>
+
+			<!-- Banner -->
+				<section id="bannersmall">
+					<div class="inner">
+						<header>
+							<h2>Over Mij</h2>
+						</header>
+					</div>
+				</section>
+
+			<!-- AboutMe -->
+            <section class="color-section">
+                <div class="image-container">
+                  <img src="images/SmileyMan.png" alt="yourmydadboogiewoogie">
+                </div>
+                <div class="text-container2">
+                  <h2>Hallo, Ik ben Bart</h2>
+                  <p>Agerbeek Advies is een adviespraktijk van Mr B.A. (Bart) Agerbeek, gespecialiseerd in het gebied van Loonbelasting en Sociale verzekeringen. Bart Agerbeek heeft een ruime ervaring in dit specialisme en publiceert hierover regelmatig. De omvang van de adviespraktijk garandeert korte lijnen met klanten, een betrokken en alerte adviseur en flexibiliteit bij de dienstverlening.
+					<br><br>Bart heeft meer dan 25 jaar ervaring als specialist loonheffingen, waaronder als belastingadviseur bij een paar van de grote kantoren.  Zo kan als zelfstandig gevestigde adviseur hoogwaardig fiscaal advies leveren.
+					Vanuit het kantoor in Vught biedt Agerbeek Advies een laagdrempelige toegang tot specialistische fiscale kennis op het gebied van loonheffingen.
+					</p>
+                  <div class="link-container2">
+                    <a href="images/CV (2).png" target="_blank" download>Download CV</a>
+                    <img src="images/cvdownload.png" alt="download">
+                  </div>
+                </div>
+              </section>
+              
+			<!-- CV -->
+			<section id="CV">
+				<div class="cv-container">
+				  <img src="images/CV (2).png" alt="My CV">
+				</div>
+			  </section>
+			  
+			<!-- CTA -->
+			<section id="cta">
+				<header>
+					<div class="grid-container">
+						<div class="text-container">
+							<h2>Blijf op de hoogte met de nieuwsbrief</h2>
+							<p>Word op de hoogte gehouden van <br> actualiteiten op het gebied van loonheffingen!</p>
+						</div>
+						<div class="hero">
+							<form name="submit-to-google-sheet">
+							  <input type="email" name="Email" placeholder="Uw email" required>
+							  <button type="submit"><p class="custom-text">Aanmelden</p></button>
+							</form>
+						  </div>
+					</div>
+				</header>
+			</section>
+			
+			<script>
+				const scriptURL = 'https://script.google.com/macros/s/AKfycbwmFxdfCtrQLxiacLA205qKuRnWKY361ro7TNSIPT2IglUeNMynUu8FCt4-sIlMBxKMQQ/exec';
+				const form = document.forms['submit-to-google-sheet'];
+
+				const msg = document.createElement('p'); // Create a new paragraph element for the message
+				msg.classList.add('message');
+			
+				form.addEventListener('submit', e => {
+					e.preventDefault();
+					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+						.then(response => {
+							msg.textContent = "Bedankt voor het inschrijven!"; // Use textContent to set the message
+							setTimeout(function() {
+								msg.textContent = ""; // Clear the message after 3 seconds
+							}, 3000);
+							form.reset();
+							form.parentNode.insertBefore(msg, form.nextSibling); // Insert the message after the form
+						})
+						.catch(error => console.error('Error!', error.message));
+				});
+			</script>
+
+			<!-- Footer -->
+			<footer>
+				<ul class="vertical-list">
+				<li>Agerbeek Loonbelasting Advies</li>
+				<li><a href="AboutMe.html">Mr BA (Bart) Agerbeek </a></li>
+				<li>Nieuwe Linie 200/kantoor 246 - 5264PJ, Vught</li>
+				<li><a href="tel:0646205414">06-46205414</a></li>
+				<li><a href="mailto:info@agerbeekadvies.nl">info@agerbeekadvies.nl</a></li>
+				</ul>
+				<ul class="horizontal-list">
+				<li><a href="https://www.linkedin.com/in/bart-agerbeek-331a551/"><img src="images/LinkedIn.png" alt="LinkedIn" style="width:42px;height:42px;"></a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="AboutMe.html">Over Mij</a></li>
+				<li><a href="Articles.html">Artikelen</a></li>
+				<li><a href="Services.html">Diensten</a></li>
+				<li><a href="Contact.html">Contact</a></li>
+				</ul>
+			</footer>
+			  
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
